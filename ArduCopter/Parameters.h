@@ -202,6 +202,7 @@ public:
         k_param_circle_nav,
         k_param_loiter_nav,     // 105
         k_param_custom_control,
+        k_param_gps_off_alt_m,
 
         // 110: Telemetry control
         //
@@ -477,6 +478,9 @@ public:
     // Acro parameters
     AP_Int8                 acro_trainer;
 #endif
+
+    AP_Int16        gps_off_alt_m;
+
 
     // Note: keep initializers here in the same order as they are declared
     // above.

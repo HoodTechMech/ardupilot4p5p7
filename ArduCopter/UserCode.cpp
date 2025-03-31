@@ -33,6 +33,25 @@ void Copter::userhook_MediumLoop()
 void Copter::userhook_SlowLoop()
 {
     // put your 3.3Hz code here
+    if(g.gps_off_alt_m>0){
+        float posD;
+        ahrs.get_relative_position_D_home(posD);
+        bool gpson = (-posD)<g.gps_off_alt_m;
+
+        // set gps on/off based on alt.
+        AP::gps().set_gps_on(gpson);
+
+        // log alts, gps on/offness
+        AP::logger().Write( "AALT",
+            "TimeUS,posD,gpson",
+            "sm-",
+            "F--",
+            "Qfb",
+            AP_HAL::micros64(),
+            posD,
+            gpson?1:0
+        );
+    }
 }
 #endif
 

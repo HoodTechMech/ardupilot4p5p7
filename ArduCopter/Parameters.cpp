@@ -158,6 +158,9 @@ const AP_Param::Info Copter::var_info[] = {
     GSCALAR(rtl_alt_type, "RTL_ALT_TYPE", 0),
 #endif
 
+    GSCALAR(gps_off_alt_m, "GPS_OFF_ALT_M", 0),
+
+
     // @Param: FS_GCS_ENABLE
     // @DisplayName: Ground Station Failsafe Enable
     // @Description: Controls whether failsafe will be invoked (and what action to take) when connection with Ground station is lost for at least 5 seconds. See FS_OPTIONS param for additional actions, or for cases allowing Mission continuation, when GCS failsafe is enabled.

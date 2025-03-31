@@ -602,6 +602,7 @@ public:
     uint8_t get_auto_switch_type() const { return _auto_switch; }
 #endif
 
+    void set_gps_on(bool on) { _gps_on = on; }
 protected:
 
     // configuration parameters
@@ -809,6 +810,9 @@ private:
 #endif
 
     void convert_parameters();
+
+    bool _gps_on;
+
 };
 
 namespace AP {
